@@ -8,11 +8,10 @@ export default function Headers() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50 bg-white shadow-none border-none before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-white before:-z-10"
+      className="fixed top-0 left-0 w-full z-50 bg-white shadow-md before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-white before:-z-10"
       style={{
         backfaceVisibility: "hidden",
         transform: "translateZ(0)",
-        overflow: "hidden",
       }}
     >
       {/* Container Header */}
@@ -48,7 +47,7 @@ export default function Headers() {
             href="https://www.linkedin.com/in/francesco-barbato-a79b92250/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center"
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center transition-transform transform hover:scale-105"
           >
             CONNECT ON LINKEDIN
           </a>
@@ -88,7 +87,7 @@ export default function Headers() {
 
       {/* Menu Mobile */}
       {isMenuOpen && (
-        <nav className="md:hidden bg-white shadow-md">
+        <nav className="md:hidden bg-white shadow-lg transition-all duration-300">
           <ul className="flex flex-col items-center space-y-4 py-6">
             <li>
               <Link
