@@ -17,7 +17,8 @@ export default function Home() {
       <Headers />
 
       {/* Hero Section */}
-      <div className="pt-[100px]"> {/* Spaziatura per compensare l'Header fisso */}
+      <div className="pt-[60px] md:pt-[100px]">
+        {/* pt-[60px] per mobile, md:pt-[100px] per desktop */}
         <Hero />
       </div>
 
