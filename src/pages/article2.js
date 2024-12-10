@@ -1,6 +1,6 @@
 import React from 'react';
 import ArticleContent2 from './components/ArticleContent2';
-import Header from './components/Header';
+import Header from './components/Header.jsx';
   // Assuming Header component is already created.
 import Footer from './components/Footer';
 
