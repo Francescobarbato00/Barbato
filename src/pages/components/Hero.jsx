@@ -1,15 +1,12 @@
 export default function Hero() {
   return (
-    <section
-      className="flex flex-col items-center justify-center text-center px-4 pt-[100px] pb-16 bg-white"
-      id="hero"
-    >
+    <section className="flex flex-col items-center justify-center text-center px-4 pt-[120px] pb-16 bg-white">
       {/* Titolo superiore */}
       <h2 className="text-[16px] font-semibold text-gray-800 uppercase mb-4">
         ING. FRANCESCO BARBATO
       </h2>
 
-      {/* Titolo principale */}
+      {/* Titolo principale con responsività */}
       <h1 className="font-semibold text-[40px] md:text-[65px] leading-[45px] md:leading-[75px] text-gray-800 font-serif mb-6">
         Combining <span className="text-blue-600 underline">technology</span> <br />
         and creative <span className="text-blue-600 underline">problem-solving</span> <br />
