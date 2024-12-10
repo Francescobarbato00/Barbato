@@ -1,4 +1,4 @@
-import Header from './components/Header';
+import Headers from "./components/Headers";
 import Hero from "./components/Hero";
 import Technologies from "./components/Technologies";
 import PortfolioSection from "./components/PortfolioSection";
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div>
       {/* Header Section */}
-      <Header />
+      <Headers />
 
       {/* Hero Section */}
       <div className="mt-32">
