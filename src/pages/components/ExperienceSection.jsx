@@ -61,7 +61,7 @@ export default function ExperienceSection() {
       },
       {
         id: 4,
-        title: "Master in Cybersecurity",
+        title: "Master Degree in Cybersecurity",
         institution: "Università degli Studi La Sapienza",
         duration: "Oct 2024 - Present",
         description:

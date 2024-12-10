@@ -12,16 +12,16 @@ import ExperienceSection from "./components/ExperienceSection";
 
 export default function Home() {
   return (
-    <div>
+    <div className="m-0 p-0">
       {/* Header Section */}
       <Headers />
 
       {/* Hero Section */}
-      <div className="mt-32">
+      <div className="pt-[100px]"> {/* Spaziatura per compensare l'Header fisso */}
         <Hero />
       </div>
 
-      {/* Other Sections */}
+      {/* Altre Sezioni */}
       <Technologies />
       <PortfolioSection />
       <ClientsSection />
