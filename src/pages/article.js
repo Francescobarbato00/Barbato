@@ -1,6 +1,6 @@
 import ArticleContent from './components/ArticleContent';
 import Footer from './components/Footer';
-import Header from '@components/Header';
+import Header from './components/Header';
   // Assicurati che il nome del componente sia 'Header' e non 'Headers'
 
 const ArticlePage = () => {

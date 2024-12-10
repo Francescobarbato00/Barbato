@@ -1,4 +1,4 @@
-import Header from '@components/Header';
+import Header from './components/Header';
 import ArticleContent3 from './components/ArticleContent3';  // Import the new article content component
 import Footer from './components/Footer';
 
