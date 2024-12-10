@@ -5,17 +5,21 @@ export default function Footer() {
     <footer className="bg-black text-white py-12">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
         {/* Testo a sinistra */}
-        <div className="text-base text-center md:text-left">
-            Built with <span className="font-bold">JavaScript</span> and{" "}
-            <span className="font-bold">Next.js</span> by{" "}
-            <span className="text-blue-400 hover:text-blue-300 transition duration-300">
-                Francesco Barbato
-            </span>
+        <div className="text-base text-center md:text-left mb-6 md:mb-0">
+          Built with <span className="font-bold">JavaScript</span> and{" "}
+          <span className="font-bold">Next.js</span> by{" "}
+          <a
+            href="https://www.linkedin.com/in/francesco-barbato-a79b92250/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-300 transition duration-300"
+          >
+            Francesco Barbato
+          </a>
         </div>
 
-
         {/* Icone Social */}
-        <div className="flex space-x-6 text-2xl mt-4 md:mt-0">
+        <div className="flex space-x-6 text-xl sm:text-2xl justify-center">
           <a
             href="https://linkedin.com"
             target="_blank"
