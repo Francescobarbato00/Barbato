@@ -38,7 +38,7 @@ const Technologies = () => {
               key={index}
               src={src}
               alt={`Logo ${index}`}
-              className="w-12 h-12 object-contain mx-6 grayscale hover:grayscale-0 transition duration-300"
+              className="logo w-12 h-12 object-contain mx-6 grayscale hover:grayscale-0 transition duration-300"
             />
           ))}
         </div>
@@ -59,12 +59,33 @@ const Technologies = () => {
           animation: scroll 40s linear infinite;
           width: calc(200%); /* Doppio contenuto per scorrimento continuo */
         }
+
         @keyframes scroll {
           from {
             transform: translateX(0);
           }
           to {
             transform: translateX(-50%);
+          }
+        }
+
+        /* Responsività per dispositivi mobili */
+        @media (max-width: 768px) {
+          .logo {
+            width: 8rem; /* Loghi più piccoli sui dispositivi mobili */
+            height: 8rem;
+          }
+
+          .logo-track {
+            animation: scroll 10s linear infinite; /* Scorrimento più lento sui dispositivi mobili */
+          }
+        }
+
+        /* Loghi più piccoli sui tablet */
+        @media (max-width: 1024px) {
+          .logo {
+            width: 10rem;
+            height: 10rem;
           }
         }
       `}</style>

@@ -35,7 +35,6 @@ export default function PortfolioSection() {
         "We developed a dynamic website for Studio Legale Berardi, a law firm specializing in notarial services. The site features a sophisticated chatbot for client inquiries, an easy-to-navigate legal resource center, and a booking system for consultations. The firm also utilizes automated document generation for contracts, agreements, and legal notices, improving efficiency and client satisfaction.",
       image: "/avvberardi.png",
       link: "https://avvberardi.vercel.app/",
-
     },
     {
       id: 5,
@@ -44,7 +43,6 @@ export default function PortfolioSection() {
         "We created a dynamic website for Edilges, a construction company specializing in renovation and restructuring projects. The site showcases their expertise in residential, commercial, and industrial construction, with detailed project galleries, client testimonials, and a cost estimator tool. Additionally, the website features an integrated contact form and a project request system to help clients easily get in touch and request quotes.",
       image: "/edilges.png",
       link: "https://edoardo.vercel.app/",
-
     },
     {
       id: 6,
@@ -53,7 +51,6 @@ export default function PortfolioSection() {
         "We developed a modern website for Studio Legale Compagno, a law firm specializing in civil and corporate law. The site features an interactive consultation booking system, detailed service descriptions, and an integrated legal advice chatbot to assist clients in real-time. It also includes a secure client portal for document sharing, case tracking, and legal updates, improving communication and transparency between clients and attorneys.",
       image: "/avvcompagno.png",
       link: "https://arianna.vercel.app/",
-      
     },
   ];
 
@@ -86,14 +83,14 @@ export default function PortfolioSection() {
           <p className="text-[16px] font-semibold leading-none text-[rgb(33,37,41)] mb-2">
             PORTFOLIO
           </p>
-          <h2 className="text-[32px] font-normal leading-[24px] text-[rgb(33,37,41)]">
+          <h2 className="text-[24px] sm:text-[32px] font-normal leading-[24px] sm:leading-[30px] text-[rgb(33,37,41)]">
             Featured Work
           </h2>
           <div className="w-16 h-1 bg-black mt-4"></div>
         </div>
 
         {/* Griglia progetti */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {currentProjects.map((project) => (
             <div
               key={project.id}
