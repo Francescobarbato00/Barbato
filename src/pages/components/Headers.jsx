@@ -7,7 +7,11 @@ export default function Headers() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Stato per il menu mobile
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+    <header
+      className="fixed top-0 left-0 w-full z-50 bg-white shadow-none border-b border-transparent will-change-transform"
+      style={{ backfaceVisibility: "hidden", transform: "translateZ(0)" }}
+    >
+      {/* Container Header */}
       <div className="flex items-center justify-between px-6 py-4">
         {/* Logo e Nome */}
         <div className="flex items-center space-x-2">
