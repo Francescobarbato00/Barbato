@@ -30,36 +30,22 @@ const Technologies = () => {
       </div>
 
       {/* Slider Container */}
-      <div className="logo-slider overflow-hidden relative">
-        <div className="logo-track flex">
+      <div className="overflow-hidden relative">
+        <div className="flex animate-scroll space-x-8 w-max">
           {/* Duplichiamo i loghi per lo scorrimento infinito */}
           {logos.concat(logos).map((src, index) => (
             <img
               key={index}
               src={src}
               alt={`Logo ${index}`}
-              className="logo w-12 h-12 object-contain mx-6 grayscale hover:grayscale-0 transition duration-300"
+              className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300"
             />
           ))}
         </div>
       </div>
 
-      {/* Stile per scorrimento infinito */}
+      {/* Stile Inline per Animazione */}
       <style jsx>{`
-        .logo-slider {
-          mask-image: linear-gradient(
-            to right,
-            transparent,
-            black 10%,
-            black 90%,
-            transparent
-          );
-        }
-        .logo-track {
-          animation: scroll 40s linear infinite;
-          width: calc(200%); /* Doppio contenuto per scorrimento continuo */
-        }
-
         @keyframes scroll {
           from {
             transform: translateX(0);
@@ -69,24 +55,8 @@ const Technologies = () => {
           }
         }
 
-        /* Responsività per dispositivi mobili */
-        @media (max-width: 768px) {
-          .logo {
-            width: 8rem; /* Loghi più piccoli sui dispositivi mobili */
-            height: 8rem;
-          }
-
-          .logo-track {
-            animation: scroll 10s linear infinite; /* Scorrimento più lento sui dispositivi mobili */
-          }
-        }
-
-        /* Loghi più piccoli sui tablet */
-        @media (max-width: 1024px) {
-          .logo {
-            width: 10rem;
-            height: 10rem;
-          }
+        .animate-scroll {
+          animation: scroll 60s linear infinite; /* Velocità di scorrimento adattabile */
         }
       `}</style>
     </section>

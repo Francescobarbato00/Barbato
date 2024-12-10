@@ -83,7 +83,7 @@ export default function CaseStudies() {
                   Connubio AI e Cybersecurity
                 </h3>
                 <p className="text-sm text-gray-600 mb-4 group-hover:text-white">
-                  Exploring the integration of AI technologies in cybersecurity, from threat detection to incident response.
+                  Exploring the integration of AI technologies in cybersecurity, from detection to incident response.
                 </p>
                 <span className="text-blue-600 hover:text-blue-800 transition duration-300 font-medium group-hover:text-white">
                   Leggi di più →
