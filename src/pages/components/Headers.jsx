@@ -8,8 +8,12 @@ export default function Headers() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50 bg-white shadow-none border-b border-transparent will-change-transform"
-      style={{ backfaceVisibility: "hidden", transform: "translateZ(0)" }}
+      className="fixed top-0 left-0 w-full z-50 bg-white shadow-none border-none before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-white before:-z-10"
+      style={{
+        backfaceVisibility: "hidden",
+        transform: "translateZ(0)",
+        overflow: "hidden",
+      }}
     >
       {/* Container Header */}
       <div className="flex items-center justify-between px-6 py-4">
