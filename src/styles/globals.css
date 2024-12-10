@@ -14,8 +14,17 @@
   }
 }
 
-body {
+html, body {
+  margin: 0; /* Rimuove tutti i margini */
+  padding: 0; /* Rimuove il padding */
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box; /* Assicura un calcolo corretto del box model */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }

@@ -1,25 +1,24 @@
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center text-center px-4 py-16 bg-white">
+    <section className="flex flex-col items-center justify-center text-center px-4 pt-[120px] pb-16 bg-white">
       {/* Titolo superiore */}
-      <h2 className="text-[16px] font-semibold leading-[0px] text-[rgb(33,37,41)] uppercase mb-4">
+      <h2 className="text-[16px] font-semibold text-gray-800 uppercase mb-4">
         ING. FRANCESCO BARBATO
       </h2>
 
       {/* Titolo principale con responsività */}
-      <h1 className="font-[530] text-[40px] md:text-[65px] leading-[50px] md:leading-[78px] text-[rgb(33,37,41)] font-serif mb-6">
+      <h1 className="font-semibold text-[40px] md:text-[65px] leading-[45px] md:leading-[75px] text-gray-800 font-serif mb-6">
         Combining <span className="text-blue-600 underline">technology</span> <br />
-        and creative <br /> <span className="text-blue-600 underline">problem-solving</span> to <br />
-        positively impact <br />
-        others.
+        and creative <span className="text-blue-600 underline">problem-solving</span> <br />
+        to positively impact others.
       </h1>
 
-      {/* Descrizione con adattamento del testo per mobile */}
-      <p className="text-[14px] md:text-[18px] leading-[24px] md:leading-[30px] font-light text-[rgb(33,37,41)] max-w-2xl mb-8">
+      {/* Descrizione */}
+      <p className="text-[14px] md:text-[18px] leading-[22px] md:leading-[28px] font-light text-gray-700 max-w-2xl mb-8">
         I use technology to connect people and help others reach their full potential.
       </p>
 
-      {/* Pulsante LinkedIn con miglioramento per mobile */}
+      {/* Pulsante LinkedIn */}
       <a
         href="https://www.linkedin.com/in/francesco-barbato-a79b92250/"
         target="_blank"
