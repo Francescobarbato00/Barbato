@@ -2,41 +2,43 @@ export default function AboutSection() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row items-start">
-        {/* Immagine con posizione sticky */}
-        <div className="w-full md:w-1/3 md:pr-8 sticky top-8 self-start">
+        {/* Immagine con posizione sticky SOLO su desktop */}
+        <div className="w-full md:w-1/3 md:pr-8 md:sticky top-8 self-start mb-8 md:mb-0">
           {/* Titolo superiore */}
-          <p className="text-sm uppercase text-gray-600 mb-2">About</p>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">
+          <p className="text-sm uppercase text-gray-600 mb-2 text-center md:text-left">
+            About
+          </p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 leading-tight text-center md:text-left">
             I am Francesco Barbato
           </h2>
           {/* Divisore */}
-          <div className="w-12 h-0.5 bg-gray-800 mb-6"></div>
+          <div className="w-12 h-0.5 bg-gray-800 mb-6 mx-auto md:mx-0"></div>
           {/* Immagine */}
           <img
             src="/profile.png"
             alt="About"
-            className="rounded-full shadow-lg w-64 h-64 object-cover mx-auto md:mx-0"
+            className="rounded-full shadow-lg w-48 h-48 md:w-64 md:h-64 object-cover mx-auto md:mx-0"
           />
         </div>
 
         {/* Testo della sezione */}
         <div className="w-full md:w-2/3">
           {/* Testo allineato con l'immagine */}
-          <h3 className="text-xl font-semibold text-gray-900 mb-4 leading-relaxed">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4 leading-relaxed text-center md:text-left">
             Actively writing code and building high- <br />
             functioning teams.
           </h3>
 
-          <p className="text-gray-600 leading-relaxed mb-4">
+          <p className="text-gray-600 leading-relaxed mb-4 text-justify">
             I am a passionate software engineer with a focus on crafting innovative solutions. With experience in full-stack development, I specialize in JavaScript, PHP, and Python to create high-performance web applications. I have had the opportunity to work on various complex projects, including e-commerce platforms and AI implementations, and I thrive in collaborative environments where I can contribute my problem-solving and leadership skills.
           </p>
-          <p className="text-gray-600 leading-relaxed mb-4">
+          <p className="text-gray-600 leading-relaxed mb-4 text-justify">
             I believe that leadership is a choice, not a title, and I take pride in making that choice every day. Currently, I am working on projects that integrate AI technologies, enhance user experiences, and drive businesses forward. I also dedicate my time to mentoring and supporting startup founders and junior developers in their growth journey.
           </p>
 
           {/* Lista degli strumenti preferiti */}
           <div className="mt-6">
-            <h4 className="text-lg font-semibold text-gray-800 mb-2">
+            <h4 className="text-lg font-semibold text-gray-800 mb-2 text-center md:text-left">
               Favorite Tools:
             </h4>
             <ul className="list-disc pl-5 text-gray-600">
@@ -52,7 +54,7 @@ export default function AboutSection() {
           </div>
 
           {/* Pulsante LinkedIn */}
-          <div className="mt-6">
+          <div className="mt-6 flex justify-center md:justify-start">
             <a
               href="https://www.linkedin.com/in/francesco-barbato-a79b92250/"
               target="_blank"

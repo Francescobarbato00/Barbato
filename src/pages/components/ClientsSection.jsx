@@ -25,9 +25,9 @@ export default function ClientsSection() {
   return (
     <section className="py-16 bg-white">
       {/* Contenitore principale */}
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8 flex justify-between items-start">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-start">
         {/* Titolo e descrizione */}
-        <div className="w-1/2">
+        <div className="w-full md:w-1/2 mb-8 md:mb-0">
           <h2 className="text-[28px] leading-[34px] font-medium text-[rgb(33,37,41)] font-serif mb-4">
             Other Clients and Past Projects
           </h2>
@@ -51,7 +51,7 @@ export default function ClientsSection() {
         </div>
 
         {/* Griglia clienti */}
-        <div className="w-1/2 grid grid-cols-2 gap-y-4 text-[14px] leading-[20px] text-gray-600 text-right">
+        <div className="w-full md:w-1/2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-4 text-[14px] leading-[20px] text-gray-600 text-left md:text-right">
           {clients.map((client, index) => (
             <span key={index} className="block">{client}</span>
           ))}
