@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function ChatBot() {
-  const [isOpen, setIsOpen] = useState(false); // Stato per apertura/chiusura
+  const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       text: "Hello! 👋 How can I help you today?",
@@ -11,33 +11,45 @@ export default function ChatBot() {
   ]);
   const [input, setInput] = useState("");
 
-  // Funzione per inviare messaggi
+  const messagesEndRef = useRef(null); // Riferimento per l'autoscroll
+
+  const faqResponses = {
+    "Who am I?": "I am a digital assistant designed to help you navigate and learn more about me!",
+    "What do I do?": "I focus on combining technology and creative problem-solving to create impactful solutions.",
+    "My vision/mission?": "My mission is to use innovative tools to connect people and help others reach their full potential.",
+  };
+
+  // Autoscroll quando i messaggi cambiano
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
+
+  const addMessage = (text, sender) => {
+    const newTime = new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    setMessages((prev) => [...prev, { text, sender, time: newTime }]);
+  };
+
   const sendMessage = (e) => {
     e.preventDefault();
     if (input.trim()) {
-      const newTime = new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-      const newMessages = [...messages, { text: input, sender: "user", time: newTime }];
-      setMessages(newMessages);
-      setInput("");
-
-      // Risposta del bot
+      addMessage(input, "user");
       setTimeout(() => {
-        setMessages((prev) => [
-          ...prev,
-          {
-            text: "The bot is currently in experimental mode.",
-            sender: "bot",
-            time: new Date().toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-            }),
-          },
-        ]);
+        addMessage("The bot is currently in experimental mode.", "bot");
       }, 1000);
+      setInput("");
     }
+  };
+
+  const handleFAQ = (question) => {
+    addMessage(question, "user");
+    setTimeout(() => {
+      addMessage(faqResponses[question], "bot");
+    }, 1000);
   };
 
   return (
@@ -84,11 +96,33 @@ export default function ChatBot() {
                 >
                   {msg.text}
                 </div>
-                <span className="text-xs text-gray-500 mt-1">
-                  {msg.time}
-                </span>
+                <span className="text-xs text-gray-500 mt-1">{msg.time}</span>
               </div>
             ))}
+            {/* Riferimento per autoscroll */}
+            <div ref={messagesEndRef}></div>
+          </div>
+
+          {/* Pulsanti FAQ */}
+          <div className="p-2 flex justify-center space-x-2">
+            <button
+              onClick={() => handleFAQ("Who am I?")}
+              className="bg-gray-100 text-gray-600 px-3 py-1 rounded text-xs hover:bg-gray-200 transition"
+            >
+              Who am I?
+            </button>
+            <button
+              onClick={() => handleFAQ("What do I do?")}
+              className="bg-gray-100 text-gray-600 px-3 py-1 rounded text-xs hover:bg-gray-200 transition"
+            >
+              What do I do?
+            </button>
+            <button
+              onClick={() => handleFAQ("My vision/mission?")}
+              className="bg-gray-100 text-gray-600 px-3 py-1 rounded text-xs hover:bg-gray-200 transition"
+            >
+              My vision/mission?
+            </button>
           </div>
 
           {/* Input per i messaggi */}
