@@ -9,6 +9,7 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import ExperienceSection from "./components/ExperienceSection";
+import ChatBot from "./components/ChatBot"; // Importa il ChatBot
 
 export default function Home() {
   return (
@@ -32,6 +33,9 @@ export default function Home() {
       <TestimonialsSection />
       <ContactSection />
       <Footer />
+
+      {/* ChatBot */}
+      <ChatBot />
     </div>
   );
 }
