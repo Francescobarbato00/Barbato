@@ -5,19 +5,19 @@ export default function Hero() {
       id="hero"
     >
       {/* Titolo superiore */}
-      <h2 className="text-[16px] font-semibold text-gray-800 uppercase mb-4">
+      <h2 className="text-[16px] font-semibold text-gray-800 uppercase mb-4 fade-scale-in">
         ING. FRANCESCO BARBATO
       </h2>
 
       {/* Titolo principale */}
-      <h1 className="font-semibold text-[40px] md:text-[65px] leading-[45px] md:leading-[75px] text-gray-800 font-serif mb-6">
+      <h1 className="font-semibold text-[40px] md:text-[65px] leading-[45px] md:leading-[75px] text-gray-800 font-serif mb-6 fade-scale-in delay-200">
         Combining <span className="text-blue-600 underline">technology</span> <br />
         and creative <span className="text-blue-600 underline">problem-solving</span> <br />
         to positively impact others.
       </h1>
 
       {/* Descrizione */}
-      <p className="text-[14px] md:text-[18px] leading-[22px] md:leading-[28px] font-light text-gray-700 max-w-2xl mb-8">
+      <p className="text-[14px] md:text-[18px] leading-[22px] md:leading-[28px] font-light text-gray-700 max-w-2xl mb-8 fade-scale-in delay-400">
         I use technology to connect people and help others reach their full potential.
       </p>
 
@@ -26,7 +26,7 @@ export default function Hero() {
         href="https://www.linkedin.com/in/francesco-barbato-a79b92250/"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-blue-600 text-white text-[16px] md:text-[18px] font-medium px-6 py-3 rounded hover:bg-blue-700 transition-transform transform hover:scale-105 flex items-center"
+        className="bg-blue-600 text-white text-[16px] md:text-[18px] font-medium px-6 py-3 rounded hover:bg-blue-700 transition-transform transform hover:scale-105 flex items-center fade-scale-in delay-600"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

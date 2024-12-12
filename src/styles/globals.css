@@ -15,3 +15,69 @@ body {
   padding: 0;
   box-sizing: inherit;
 }
+/* global.css */
+
+/* Animazione di fade-in con scale-up */
+@keyframes fade-scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Classi con ritardi */
+.fade-scale-in {
+  animation: fade-scale-in 0.8s ease-out forwards;
+}
+
+.fade-scale-in.delay-200 {
+  animation-delay: 200ms;
+}
+
+.fade-scale-in.delay-400 {
+  animation-delay: 400ms;
+}
+
+.fade-scale-in.delay-600 {
+  animation-delay: 600ms;
+}
+
+.fade-scale-in.delay-800 {
+  animation-delay: 800ms;
+}
+/* global.css */
+
+/* Animazione fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animazione fade-up */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classi di animazione */
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
