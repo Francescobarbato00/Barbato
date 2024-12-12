@@ -119,15 +119,15 @@ const ArticleContent = () => {
           </p>
         </div>
 
-        {/* Back to Home Button */}
-        <div className="text-center sm:text-left mt-8 fade-in-up">
-          <button
-            onClick={goHome}
-            className="px-6 py-2 text-white bg-blue-500 hover:bg-blue-700 rounded-full text-sm sm:text-base"
-          >
-            Back to Home
-          </button>
-        </div>
+         {/* Back to Home Button */}
+         <div className="text-left mt-8 fade-in-up">
+            <button 
+              onClick={goHome} 
+              className="px-6 py-2 text-white bg-blue-500 hover:bg-blue-700 rounded-full"
+            >
+              Back to Home
+            </button>
+          </div>
       </div>
     </section>
   );
