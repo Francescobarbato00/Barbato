@@ -7,25 +7,20 @@ export default function Headers() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Stato per il menu mobile
 
   return (
-    <header
-      className="fixed top-0 left-0 w-full z-50 bg-white shadow-md before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-white before:-z-10"
-      style={{
-        backfaceVisibility: "hidden",
-        transform: "translateZ(0)",
-      }}
-    >
-      {/* Container Header */}
+    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       <div className="flex items-center justify-between px-6 py-4">
         {/* Logo e Nome */}
-        <div className="flex items-center space-x-2">
-          <CodeBracketIcon className="w-6 h-6 text-gray-800" />
-          <h1 className="text-lg font-semibold text-gray-800">
-            ING. Francesco Barbato
-          </h1>
-        </div>
+        <Link href="/" passHref>
+          <div className="flex items-center space-x-2 cursor-pointer hover:scale-105 transform transition-transform duration-300">
+            <CodeBracketIcon className="w-6 h-6 text-gray-800" />
+            <h1 className="text-lg font-semibold text-gray-800 hover:text-blue-500">
+              ING. Francesco Barbato
+            </h1>
+          </div>
+        </Link>
 
         {/* Menu Desktop */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex flex-1 justify-center space-x-8">
           <Link href="#work" className="text-gray-700 hover:text-gray-900 font-medium">
             WORK
           </Link>
@@ -65,7 +60,7 @@ export default function Headers() {
 
         {/* Menu Mobile Button */}
         <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setIsMenuOpen(true)}
           className="md:hidden text-gray-800 focus:outline-none"
         >
           <svg
@@ -85,49 +80,67 @@ export default function Headers() {
         </button>
       </div>
 
-      {/* Menu Mobile */}
+      {/* Menu Mobile Fullscreen */}
       {isMenuOpen && (
-        <nav className="md:hidden bg-white shadow-lg transition-all duration-300">
-          <ul className="flex flex-col items-center space-y-4 py-6">
-            <li>
-              <Link
-                href="#work"
-                className="text-gray-700 hover:text-gray-900 text-lg"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                WORK
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#about"
-                className="text-gray-700 hover:text-gray-900 text-lg"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                ABOUT
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#testimonials"
-                className="text-gray-700 hover:text-gray-900 text-lg"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                TESTIMONIALS
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#contact"
-                className="text-gray-700 hover:text-gray-900 text-lg"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                CONTACT
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <div className="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center animate-fade-in">
+          {/* Pulsante di chiusura */}
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-6 right-6 text-gray-700 hover:text-gray-900 text-3xl"
+          >
+            &times;
+          </button>
+
+          {/* Link del Menu Mobile */}
+          <nav className="flex flex-col space-y-8 items-center">
+            <Link
+              href="#work"
+              className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              WORK
+            </Link>
+            <Link
+              href="#about"
+              className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              ABOUT
+            </Link>
+            <Link
+              href="#testimonials"
+              className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              TESTIMONIALS
+            </Link>
+            <Link
+              href="#contact"
+              className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              CONTACT
+            </Link>
+          </nav>
+        </div>
       )}
+
+      {/* Animazione */}
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(-100%);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.5s ease-out;
+        }
+      `}</style>
     </header>
   );
 }
