@@ -14,10 +14,11 @@ export default function ChatBot() {
   const messagesEndRef = useRef(null); // Riferimento per l'autoscroll
 
   const faqResponses = {
-    "Who am I?": "I am a digital assistant designed to help you navigate and learn more about me!",
-    "What do I do?": "I focus on combining technology and creative problem-solving to create impactful solutions.",
+    "Who am I?": "I am an IT engineer specialized in web development and currently working as a cybersecurity analyst.",
+    "What do I do?": "I am a software engineer specialized in web development and currently working as a cybersecurity analyst.",
     "My vision/mission?": "My mission is to use innovative tools to connect people and help others reach their full potential.",
   };
+  
 
   // Autoscroll quando i messaggi cambiano
   useEffect(() => {
