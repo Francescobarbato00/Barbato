@@ -30,7 +30,7 @@ export default function Headers() {
           <Link href="#testimonials" className="text-gray-700 hover:text-gray-900 font-medium">
             TESTIMONIALS
           </Link>
-          <Link href="#contact" className="text-gray-700 hover:text-gray-900 font-medium">
+          <Link href="contact" className="text-gray-700 hover:text-gray-900 font-medium">
             CONTACT
           </Link>
         </nav>
@@ -115,7 +115,7 @@ export default function Headers() {
               TESTIMONIALS
             </Link>
             <Link
-              href="#contact"
+              href="contact"
               className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
               onClick={() => setIsMenuOpen(false)}
             >

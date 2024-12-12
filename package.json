@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "framer-motion": "^11.14.1",
     "i18next": "^24.0.5",
     "next": "15.0.4",
     "next-i18next": "^15.4.0",
+    "pigeon-maps": "^0.21.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.1.4",
