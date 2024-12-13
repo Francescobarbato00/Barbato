@@ -26,7 +26,7 @@ export default function ValuesSection() {
   return (
     <section
       ref={sectionRef}
-      className="py-16 bg-gray-50"
+      className="py-16 bg-white"
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Layout Grid */}
