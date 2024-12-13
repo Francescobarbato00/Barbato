@@ -4,10 +4,10 @@ export default function InfoSection() {
         {/* Sezione Sinistra con Gradiente */}
         <div
           className="w-full md:w-1/2 bg-gradient-to-br from-blue-700 via-blue-400 to-blue-200 
-                     flex items-center justify-center px-4 sm:px-8 py-12 md:py-0 
-                     mt-6 sm:mt-8 md:mt-0 animate-fadeIn md:animate-slideInLeft"
+                     flex items-center justify-center px-4 sm:px-8 py-28 md:py-0 
+                     animate-fadeIn md:animate-slideInLeft"
         >
-          <div className="max-w-lg text-left">
+          <div className="max-w-lg text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
               Programmer, <span className="italic text-blue-300">Web Developer</span>, and AI Expert
             </h1>
@@ -17,13 +17,13 @@ export default function InfoSection() {
           </div>
         </div>
   
-        {/* Sezione Destra con Form */}
+        {/* Sezione Destra con Form Abbassato SOLO DA DESKTOP */}
         <div
-          className="w-full md:w-1/2 bg-white flex items-start justify-center px-4 sm:px-8 py-12 md:pt-32 
+          className="w-full md:w-1/2 bg-white flex items-start justify-center px-4 sm:px-8 py-12 md:pt-40
                      animate-fadeIn md:animate-slideInRight"
         >
-          <div className="w-full max-w-lg">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6 text-left">
+          <div className="w-full max-w-lg text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6">
               Talk to Me, Computer Engineer
             </h2>
             <form className="space-y-4">
