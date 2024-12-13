@@ -18,7 +18,7 @@ const ArticleContent3 = () => {
 
         {/* Article Image */}
         <img
-          src="/sec.webp"
+          src="/sec.jpg"
           alt="AI and Cybersecurity"
           className="w-full h-60 object-cover mb-6 fade-in-up"
         />

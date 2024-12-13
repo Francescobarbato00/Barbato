@@ -18,7 +18,7 @@ const ArticleContent2 = () => {
 
         {/* Image */}
         <img
-          src="/chat.webp"
+          src="/chat.jpg"
           alt="AI Chatbot Implementation"
           className="w-full h-60 object-cover mb-6 fade-in-up"
         />
