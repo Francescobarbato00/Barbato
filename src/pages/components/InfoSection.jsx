@@ -1,10 +1,11 @@
 export default function InfoSection() {
     return (
       <section className="flex flex-col md:flex-row items-center justify-between h-auto md:h-screen">
-        {/* Sezione Sinistra con Gradiente Aggiornato */}
+        {/* Sezione Sinistra con Gradiente */}
         <div
           className="w-full md:w-1/2 h-auto md:h-full bg-gradient-to-br from-blue-700 via-blue-400 to-blue-200 
-                     flex items-center justify-center px-4 sm:px-8 py-12 md:py-0 mt-8 sm:mt-12 animate-slideInLeft"
+                     flex items-center justify-center px-4 sm:px-8 py-12 md:py-0 mt-8 sm:mt-12
+                     animate-fadeIn md:animate-slideInLeft"
         >
           <div className="max-w-lg text-left">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
@@ -16,9 +17,10 @@ export default function InfoSection() {
           </div>
         </div>
   
-        {/* Sezione Destra con Form Abbassato */}
+        {/* Sezione Destra con Form */}
         <div
-          className="w-full md:w-1/2 bg-white flex items-start justify-center px-4 sm:px-8 py-12 md:pt-32 animate-slideInRight"
+          className="w-full md:w-1/2 bg-white flex items-start justify-center px-4 sm:px-8 py-12 md:pt-32 
+                     animate-fadeIn md:animate-slideInRight"
         >
           <div className="w-full max-w-lg">
             <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6 text-left">
@@ -26,7 +28,6 @@ export default function InfoSection() {
             </h2>
             {/* Form */}
             <form className="space-y-4">
-              {/* Riga Nome e Cognome */}
               <div className="flex flex-col md:flex-row gap-4">
                 <input
                   type="text"
@@ -39,7 +40,6 @@ export default function InfoSection() {
                   className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
-              {/* Email e Azienda */}
               <div className="flex flex-col md:flex-row gap-4">
                 <input
                   type="email"
@@ -52,13 +52,11 @@ export default function InfoSection() {
                   className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
-              {/* Numero di Telefono */}
               <input
                 type="tel"
                 placeholder="Phone Number"
                 className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              {/* Ruolo Lavorativo */}
               <select
                 className="w-full border border-gray-300 p-3 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
@@ -70,13 +68,11 @@ export default function InfoSection() {
                 <option value="executive">Executive</option>
                 <option value="other">Other</option>
               </select>
-              {/* Messaggio */}
               <textarea
                 placeholder="How can we help you?"
                 rows="4"
                 className="w-full border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
-              {/* Checkbox */}
               <div className="flex items-start space-x-2">
                 <input
                   type="checkbox"
@@ -89,7 +85,6 @@ export default function InfoSection() {
                   </a>
                 </label>
               </div>
-              {/* Pulsante di Invio */}
               <button
                 type="submit"
                 className="w-full bg-blue-600 text-white py-3 font-semibold hover:bg-blue-700 transition duration-300"
