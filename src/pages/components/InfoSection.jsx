@@ -9,7 +9,7 @@ export default function InfoSection() {
         >
           <div className="max-w-lg text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
-              Programmer, <span className="italic text-blue-300">Web Developer</span>, and AI Expert
+              Programmer, <span className="italic text-blue-300">AI expert</span> and Web Developer
             </h1>
             <p className="text-base sm:text-lg text-white/80 leading-relaxed">
               I specialize in building high-performance web applications and innovative AI solutions to bring your ideas to life.

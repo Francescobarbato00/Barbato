@@ -93,6 +93,17 @@ export default function Headers() {
 
           {/* Link del Menu Mobile */}
           <nav className="flex flex-col space-y-8 items-center">
+          <Link
+              href="/"
+              className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              HOME
+            </Link>
+            
+            
+            
+            
             <Link
               href="#work"
               className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
