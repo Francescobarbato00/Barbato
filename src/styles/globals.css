@@ -15,6 +15,7 @@ body {
   padding: 0;
   box-sizing: inherit;
 }
+/* global.css */
 
 /* Animazione di fade-in con scale-up */
 @keyframes fade-scale-in {
@@ -28,6 +29,7 @@ body {
   }
 }
 
+/* Classi con ritardi */
 .fade-scale-in {
   animation: fade-scale-in 0.8s ease-out forwards;
 }
@@ -47,6 +49,7 @@ body {
 .fade-scale-in.delay-800 {
   animation-delay: 800ms;
 }
+/* global.css */
 
 /* Animazione fade-in */
 @keyframes fadeIn {
@@ -56,10 +59,6 @@ body {
   100% {
     opacity: 1;
   }
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-out forwards;
 }
 
 /* Animazione fade-up */
@@ -74,10 +73,14 @@ body {
   }
 }
 
+/* Classi di animazione */
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
 .fade-up {
   animation: fadeUp 1s ease-out forwards;
 }
-
 /* Animazione slide-up con fade-in */
 @keyframes slideUpFade {
   0% {
@@ -90,11 +93,10 @@ body {
   }
 }
 
+/* Classe di animazione */
 .animate-slide-up-fade {
   animation: slideUpFade 0.6s ease-out;
 }
-
-/* Animazione fade-in-up */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -109,7 +111,6 @@ body {
 .fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
 }
-
 /* Animazione di fade-in */
 @keyframes fadeIn {
   from {
@@ -125,8 +126,6 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-out forwards;
 }
-
-/* Slide-in da sinistra */
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -138,11 +137,6 @@ body {
   }
 }
 
-.animate-slideInLeft {
-  animation: slideInLeft 1s ease-out forwards;
-}
-
-/* Slide-in da destra */
 @keyframes slideInRight {
   0% {
     opacity: 0;
@@ -154,17 +148,10 @@ body {
   }
 }
 
-.animate-slideInRight {
-  animation: slideInRight 1s ease-out forwards;
+.animate-slideInLeft {
+  animation: slideInLeft 1s ease-out forwards;
 }
 
-/* --- LOGICA PER MOBILE: FADE-IN SOSTITUISCE SLIDE-IN --- */
-@media (max-width: 767px) {
-  .animate-slideInLeft {
-    animation: fadeIn 1s ease-out forwards;
-  }
-
-  .animate-slideInRight {
-    animation: fadeIn 1s ease-out forwards;
-  }
+.animate-slideInRight {
+  animation: slideInRight 1s ease-out forwards;
 }

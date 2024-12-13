@@ -1,10 +1,10 @@
 export default function InfoSection() {
     return (
-      <section className="flex flex-col md:flex-row items-center justify-between h-auto md:h-screen">
+      <section className="flex flex-col md:flex-row items-stretch h-auto md:h-screen">
         {/* Sezione Sinistra con Gradiente */}
         <div
-          className="w-full md:w-1/2 h-auto md:h-full bg-gradient-to-br from-blue-700 via-blue-400 to-blue-200 
-                     flex items-center justify-center px-4 sm:px-8 py-12 md:py-0 mt-8 sm:mt-12
+          className="w-full md:w-1/2 bg-gradient-to-br from-blue-700 via-blue-400 to-blue-200 
+                     flex items-center justify-center px-4 sm:px-8 py-12 md:py-0 
                      animate-fadeIn md:animate-slideInLeft"
         >
           <div className="max-w-lg text-left">
@@ -26,7 +26,6 @@ export default function InfoSection() {
             <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6 text-left">
               Talk to Me, Computer Engineer
             </h2>
-            {/* Form */}
             <form className="space-y-4">
               <div className="flex flex-col md:flex-row gap-4">
                 <input
