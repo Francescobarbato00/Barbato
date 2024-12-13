@@ -47,7 +47,7 @@ export default function CaseStudies() {
           <Link href="/article2" passHref>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-transform transform hover:scale-105 duration-300 relative group cursor-pointer">
               <img
-                src="/chat.webp"
+                src="/chat.jpg"
                 alt="Implementazione Chatbot IA"
                 className="w-full h-48 object-cover"
               />
@@ -74,7 +74,7 @@ export default function CaseStudies() {
           <Link href="/article3" passHref>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-transform transform hover:scale-105 duration-300 relative group cursor-pointer">
               <img
-                src="/sec.webp"
+                src="/sec.jpg"
                 alt="AI e Cybersecurity"
                 className="w-full h-48 object-cover"
               />
