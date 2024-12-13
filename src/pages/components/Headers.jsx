@@ -21,14 +21,14 @@ export default function Headers() {
 
         {/* Menu Desktop */}
         <nav className="hidden md:flex flex-1 justify-center space-x-8">
-          <Link href="#work" className="text-gray-700 hover:text-gray-900 font-medium">
+        <Link href="/" className="text-gray-700 hover:text-gray-900 font-medium">
+            HOME
+          </Link>
+          <Link href="/work" className="text-gray-700 hover:text-gray-900 font-medium">
             WORK
           </Link>
           <Link href="#about" className="text-gray-700 hover:text-gray-900 font-medium">
             ABOUT
-          </Link>
-          <Link href="#testimonials" className="text-gray-700 hover:text-gray-900 font-medium">
-            TESTIMONIALS
           </Link>
           <Link href="contact" className="text-gray-700 hover:text-gray-900 font-medium">
             CONTACT
@@ -105,7 +105,7 @@ export default function Headers() {
             
             
             <Link
-              href="#work"
+              href="/work"
               className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -117,13 +117,6 @@ export default function Headers() {
               onClick={() => setIsMenuOpen(false)}
             >
               ABOUT
-            </Link>
-            <Link
-              href="#testimonials"
-              className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              TESTIMONIALS
             </Link>
             <Link
               href="contact"
