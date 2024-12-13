@@ -5,7 +5,7 @@ export default function InfoSection() {
         <div
           className="w-full md:w-1/2 bg-gradient-to-br from-blue-700 via-blue-400 to-blue-200 
                      flex items-center justify-center px-4 sm:px-8 py-12 md:py-0 
-                     animate-fadeIn md:animate-slideInLeft"
+                     mt-6 sm:mt-8 md:mt-0 animate-fadeIn md:animate-slideInLeft"
         >
           <div className="max-w-lg text-left">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
