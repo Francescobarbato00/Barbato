@@ -4,6 +4,7 @@ import ChatBot from "./components/ChatBot"; // Importa il ChatBot
 import IntroductionSection from "./components/IntroductionSection";
 import TabbedSection from "./components/TabbedSection";
 import ValuesSection from "./components/ValuesSection";
+import MyWorkStory from "./components/MyWorkStory";
 
 
 
@@ -14,8 +15,10 @@ export default function Work() {
       <Headers />
 
        <IntroductionSection />
-       <ValuesSection />
+       <MyWorkStory />
        <TabbedSection />
+       <ValuesSection />
+      
     
       <Footer />
 
