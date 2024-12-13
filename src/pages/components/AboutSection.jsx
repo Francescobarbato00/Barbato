@@ -1,7 +1,7 @@
 export default function AboutSection() {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row items-start">
+      <div className="max-w-screen-lg mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-start">
         {/* Immagine con posizione sticky SOLO su desktop */}
         <div className="w-full md:w-1/3 md:pr-8 md:sticky top-8 self-start mb-8 md:mb-0">
           {/* Titolo superiore */}
