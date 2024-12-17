@@ -5,7 +5,6 @@ import IntroductionSection from "./components/IntroductionSection";
 import TabbedSection from "./components/TabbedSection";
 import ValuesSection from "./components/ValuesSection";
 import MyWorkStory from "./components/MyWorkStory";
-import VisionMission from "./components/ContactSection";
 import VisionMissionSection from "./components/VisionMissionSection";
 
 

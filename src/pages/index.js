@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import ExperienceSection from "./components/ExperienceSection";
 import ChatBot from "./components/ChatBot"; // Importa il ChatBot
 
+
 export default function Home() {
   return (
     <div className="m-0 p-0">
@@ -33,7 +34,6 @@ export default function Home() {
       <TestimonialsSection />
       <ContactSection />
       <Footer />
-
       {/* ChatBot */}
       <ChatBot />
     </div>

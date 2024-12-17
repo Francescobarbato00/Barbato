@@ -291,3 +291,59 @@ body {
 .animate-fadeInUp {
   animation: fadeInUp 1s ease-out forwards;
 }
+/* Animazione di ingresso solo con fade */
+.section-hidden {
+  opacity: 0;
+  transition: opacity 2s ease-out; /* Effetto fade-in morbido */
+}
+
+.section-visible {
+  opacity: 1;
+}
+/* Titolo del Blog */
+.blog-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2563eb;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.blog-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 0.5rem;
+  opacity: 0;
+  animation: fadeIn 1.8s ease-in-out forwards;
+}
+
+/* Articoli con Slide-Up */
+.blog-article {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

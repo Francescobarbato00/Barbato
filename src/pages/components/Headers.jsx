@@ -27,10 +27,10 @@ export default function Headers() {
           <Link href="/work" className="text-gray-700 hover:text-gray-900 font-medium">
             WORK
           </Link>
-          <Link href="#about" className="text-gray-700 hover:text-gray-900 font-medium">
-            ABOUT
+          <Link href="/blog" className="text-gray-700 hover:text-gray-900 font-medium">
+            BLOG
           </Link>
-          <Link href="contact" className="text-gray-700 hover:text-gray-900 font-medium">
+          <Link href="/contact" className="text-gray-700 hover:text-gray-900 font-medium">
             CONTACT
           </Link>
         </nav>
@@ -112,14 +112,14 @@ export default function Headers() {
               WORK
             </Link>
             <Link
-              href="#about"
+              href="/articles"
               className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
-              ABOUT
+              BLOG
             </Link>
             <Link
-              href="contact"
+              href="/contact"
               className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
