@@ -6,7 +6,7 @@ import BlogGrid from "./components/BlogGrid";
 
 export default function Blog() {
   return (
-    <div className="m-0 p-0 bg-gray-50">
+    <div className="m-0 p-0 bg-white">
       {/* Header Section */}
       <Headers />
 
