@@ -39,18 +39,30 @@ const BlogGrid = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 bg-white">
       {/* Titolo Blog */}
-      <div>
-        <h1 className="blog-title">Our Blog</h1>
-        <p className="blog-subtitle">
+      <div className="text-center">
+        <h1
+          className={`text-3xl md:text-5xl font-bold text-blue-600 animate__animated ${
+            isVisible ? "animate__fadeIn" : ""
+          }`}
+          style={{ animationDelay: "0.2s" }}
+        >
+          Our Blog
+        </h1>
+        <p
+          className={`text-gray-600 mt-2 text-sm md:text-lg animate__animated ${
+            isVisible ? "animate__fadeIn" : ""
+          }`}
+          style={{ animationDelay: "0.5s" }}
+        >
           Insights, strategies, and stories to grow your business and succeed.
         </p>
       </div>
 
       {/* Filtri Categoria */}
       <div
-        className={`flex justify-center space-x-4 mt-8 mb-10 animate__animated ${
+        className={`flex flex-wrap justify-center gap-2 md:gap-4 mt-8 mb-10 animate__animated ${
           isVisible ? "animate__fadeIn" : ""
         }`}
       >
@@ -58,7 +70,7 @@ const BlogGrid = () => {
           <button
             key={category.id}
             onClick={() => setSelectedCategory(category.id)}
-            className={`px-6 py-2 rounded-full border-2 ${
+            className={`px-4 py-2 text-sm md:text-base rounded-full border-2 ${
               selectedCategory === category.id
                 ? "bg-blue-500 text-white border-blue-500"
                 : "text-blue-500 border-blue-500 hover:bg-blue-100"
@@ -70,7 +82,7 @@ const BlogGrid = () => {
       </div>
 
       {/* Griglia Articoli */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-8">
         {currentPosts.map((post, index) => (
           <div
             key={post.id}
@@ -79,11 +91,15 @@ const BlogGrid = () => {
             }`}
             style={{ animationDelay: `${index * 0.2}s` }}
           >
-            <img src={post.image} alt={post.title} className="w-full h-44 object-cover" />
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-36 md:h-44 object-cover"
+            />
             <div className="p-4">
-              <p className="text-gray-500 text-sm mb-2">{post.date} • Admin</p>
-              <h2 className="text-lg font-semibold mb-2">{post.title}</h2>
-              <p className="text-gray-700 text-sm">{post.description}</p>
+              <p className="text-gray-500 text-xs md:text-sm mb-2">{post.date} • Admin</p>
+              <h2 className="text-sm md:text-lg font-semibold mb-2">{post.title}</h2>
+              <p className="text-gray-700 text-xs md:text-sm">{post.description}</p>
             </div>
           </div>
         ))}
@@ -115,8 +131,7 @@ const BlogGrid = () => {
         )}
         <button
           onClick={() =>
-            currentPage <
-              Math.ceil(filteredPosts.length / postsPerPage) &&
+            currentPage < Math.ceil(filteredPosts.length / postsPerPage) &&
             paginate(currentPage + 1)
           }
           className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100"

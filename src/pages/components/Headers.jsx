@@ -112,7 +112,7 @@ export default function Headers() {
               WORK
             </Link>
             <Link
-              href="/articles"
+              href="/blog"
               className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
               onClick={() => setIsMenuOpen(false)}
             >
