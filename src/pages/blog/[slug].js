@@ -95,7 +95,7 @@ const ArticleContent = ({ post }) => {
             onClick={() => router.push("/blog")} // Cambia "/" in "/blog"
             className="px-6 py-2 text-white bg-blue-500 hover:bg-blue-700 rounded-full"
         >
-            Back to Blog
+            Back to the Blog
         </button>
           </div>
         </div>
