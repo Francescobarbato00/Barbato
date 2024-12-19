@@ -22,8 +22,8 @@ const BlogGrid = () => {
   const categories = [
     { id: "all", name: "All" },
     { id: "news", name: "News" },
-    { id: "conference", name: "Conference" },
-    { id: "event", name: "Event" },
+    { id: "cybersecurity", name: "Cybersecurity" },
+    { id: "ai", name: "AI" },
   ];
 
   // Funzione per recuperare i post da Firestore
