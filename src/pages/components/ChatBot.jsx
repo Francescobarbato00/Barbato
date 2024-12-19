@@ -10,17 +10,18 @@ export default function ChatBot() {
     },
   ]);
   const [input, setInput] = useState("");
-
-  const messagesEndRef = useRef(null); // Riferimento per l'autoscroll
+  const messagesEndRef = useRef(null);
 
   const faqResponses = {
-    "Who am I?": "I am an IT engineer specialized in web development and currently working as a cybersecurity analyst.",
-    "What do I do?": "I am a software engineer specialized in web development and currently working as a cybersecurity analyst.",
-    "My vision/mission?": "My mission is to use innovative tools to connect people and help others reach their full potential.",
+    "Who am I?":
+      "I am an IT engineer specialized in web development and currently working as a cybersecurity analyst.",
+    "What do I do?":
+      "I specialize in full-stack web development and offer AI-driven solutions for modern applications.",
+    "My vision/mission?":
+      "My mission is to use innovative tools to connect people and empower others to achieve their full potential.",
   };
-  
 
-  // Autoscroll quando i messaggi cambiano
+  // Scroll automatico verso l'ultimo messaggio
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -40,7 +41,9 @@ export default function ChatBot() {
     if (input.trim()) {
       addMessage(input, "user");
       setTimeout(() => {
-        addMessage("The bot is currently in experimental mode.", "bot");
+        const defaultResponse = "I'm here to assist you. Type a question or use the FAQ buttons.";
+        const reply = faqResponses[input.trim()] || defaultResponse;
+        addMessage(reply, "bot");
       }, 1000);
       setInput("");
     }
@@ -54,11 +57,11 @@ export default function ChatBot() {
   };
 
   return (
-    <div>
+    <div className="z-50">
       {/* Icona del chatbot */}
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg cursor-pointer hover:scale-110 hover:translate-y-[-5px] transition-all duration-300 ease-in-out"
+        className="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out z-50"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -72,11 +75,11 @@ export default function ChatBot() {
 
       {/* Finestra della chat */}
       {isOpen && (
-        <div className="fixed bottom-20 right-6 bg-white w-80 h-96 border border-gray-300 shadow-lg rounded-lg flex flex-col animate-slide-up-fade">
+        <div className="fixed bottom-20 right-6 bg-white w-80 h-96 border border-gray-300 shadow-lg rounded-lg flex flex-col animate-slide-up-fade z-50">
           {/* Header */}
           <div className="bg-blue-600 text-white p-4 rounded-t-lg">
-            <h3 className="text-lg font-semibold">Chatbot</h3>
-            <p className="text-sm">The bot is currently in experimental mode.</p>
+            <h3 className="text-lg font-semibold">ChatBot</h3>
+            <p className="text-sm">Ask me a question or select a quick option.</p>
           </div>
 
           {/* Corpo della chat */}
@@ -100,30 +103,20 @@ export default function ChatBot() {
                 <span className="text-xs text-gray-500 mt-1">{msg.time}</span>
               </div>
             ))}
-            {/* Riferimento per autoscroll */}
             <div ref={messagesEndRef}></div>
           </div>
 
           {/* Pulsanti FAQ */}
           <div className="p-2 flex justify-center space-x-2">
-            <button
-              onClick={() => handleFAQ("Who am I?")}
-              className="bg-gray-100 text-gray-600 px-3 py-1 rounded text-xs hover:bg-gray-200 transition"
-            >
-              Who am I?
-            </button>
-            <button
-              onClick={() => handleFAQ("What do I do?")}
-              className="bg-gray-100 text-gray-600 px-3 py-1 rounded text-xs hover:bg-gray-200 transition"
-            >
-              What do I do?
-            </button>
-            <button
-              onClick={() => handleFAQ("My vision/mission?")}
-              className="bg-gray-100 text-gray-600 px-3 py-1 rounded text-xs hover:bg-gray-200 transition"
-            >
-              My vision/mission?
-            </button>
+            {Object.keys(faqResponses).map((question) => (
+              <button
+                key={question}
+                onClick={() => handleFAQ(question)}
+                className="bg-gray-100 text-gray-600 px-3 py-1 rounded text-xs hover:bg-gray-200 transition"
+              >
+                {question}
+              </button>
+            ))}
           </div>
 
           {/* Input per i messaggi */}
