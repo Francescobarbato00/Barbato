@@ -1,10 +1,31 @@
 import Link from "next/link";
-import { CodeBracketIcon } from "@heroicons/react/24/solid"; // Icona
-import Flag from "react-world-flags"; // Libreria bandiere
+import { CodeBracketIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import Flag from "react-world-flags";
 import { useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "/lib/firebase";
 
 export default function Headers() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Stato per il menu mobile
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false); // Stato per il popup di ricerca
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+
+  // Funzione per cercare articoli in Firestore
+  const searchArticles = async () => {
+    if (query.trim() === "") return;
+    try {
+      const querySnapshot = await getDocs(collection(db, "posts"));
+      const filteredResults = querySnapshot.docs
+        .map((doc) => doc.data())
+        .filter((post) =>
+          post.title.toLowerCase().includes(query.toLowerCase())
+        );
+      setResults(filteredResults);
+    } catch (error) {
+      console.error("Error during search:", error);
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
@@ -21,7 +42,7 @@ export default function Headers() {
 
         {/* Menu Desktop */}
         <nav className="hidden md:flex flex-1 justify-center space-x-8">
-        <Link href="/" className="text-gray-700 hover:text-gray-900 font-medium">
+          <Link href="/" className="text-gray-700 hover:text-gray-900 font-medium">
             HOME
           </Link>
           <Link href="/work" className="text-gray-700 hover:text-gray-900 font-medium">
@@ -56,95 +77,120 @@ export default function Headers() {
               <Flag code="IT" className="w-6 h-6" />
             </button>
           </div>
+
+          {/* Icona di Ricerca */}
+          <button
+            onClick={() => setIsSearchOpen(true)}
+            className="text-gray-700 hover:text-gray-500"
+          >
+            <MagnifyingGlassIcon className="w-6 h-6" />
+          </button>
         </div>
 
-        {/* Menu Mobile Button */}
-        <button
-          onClick={() => setIsMenuOpen(true)}
-          className="md:hidden text-gray-800 focus:outline-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+        {/* Icona di Ricerca Mobile */}
+        <div className="md:hidden flex items-center space-x-4">
+          <button
+            onClick={() => setIsSearchOpen(true)}
+            className="text-gray-700 hover:text-gray-500"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
+            <MagnifyingGlassIcon className="w-6 h-6" />
+          </button>
+
+          {/* Menu Mobile Button */}
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            className="text-gray-800 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {/* Popup di Ricerca */}
+      {isSearchOpen && (
+        <div className="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center p-4">
+          {/* Close Button */}
+          <button
+            onClick={() => setIsSearchOpen(false)}
+            className="absolute top-6 right-6 text-gray-700 hover:text-gray-900 text-3xl"
+          >
+            &times;
+          </button>
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Search the Site</h2>
+          <input
+            type="text"
+            placeholder="Search..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full max-w-xl p-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            onClick={searchArticles}
+            className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700"
+          >
+            Search
+          </button>
+
+          {/* Risultati della Ricerca */}
+          <div className="mt-6 w-full max-w-xl">
+            {results.length > 0 ? (
+              <ul>
+                {results.map((post, index) => (
+                  <li key={index} className="mb-2">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="text-blue-600 hover:underline"
+                    >
+                      {post.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              query && <p className="text-gray-500">No results found.</p>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Menu Mobile Fullscreen */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center animate-fade-in">
-          {/* Pulsante di chiusura */}
           <button
             onClick={() => setIsMenuOpen(false)}
             className="absolute top-6 right-6 text-gray-700 hover:text-gray-900 text-3xl"
           >
             &times;
           </button>
-
-          {/* Link del Menu Mobile */}
           <nav className="flex flex-col space-y-8 items-center">
-          <Link
-              href="/"
-              className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300">
               HOME
             </Link>
-            
-            
-            
-            
-            <Link
-              href="/work"
-              className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <Link href="/work" onClick={() => setIsMenuOpen(false)} className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300">
               WORK
             </Link>
-            <Link
-              href="/blog"
-              className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <Link href="/blog" onClick={() => setIsMenuOpen(false)} className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300">
               BLOG
             </Link>
-            <Link
-              href="/contact"
-              className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="text-3xl font-semibold text-gray-800 hover:text-blue-600 transition duration-300">
               CONTACT
             </Link>
           </nav>
         </div>
       )}
-
-      {/* Animazione */}
-      <style jsx>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(-100%);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.5s ease-out;
-        }
-      `}</style>
     </header>
   );
 }
