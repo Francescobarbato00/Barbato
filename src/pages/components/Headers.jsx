@@ -121,28 +121,33 @@ export default function Headers() {
 
       {/* Popup di Ricerca */}
       {isSearchOpen && (
-        <div className="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center p-4">
-          {/* Close Button */}
-          <button
-            onClick={() => setIsSearchOpen(false)}
-            className="absolute top-6 right-6 text-gray-700 hover:text-gray-900 text-3xl"
-          >
-            &times;
-          </button>
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Search the Site</h2>
-          <input
-            type="text"
-            placeholder="Search..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="w-full max-w-xl p-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <button
-            onClick={searchArticles}
-            className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700"
-          >
-            Search
-          </button>
+  <div
+    className={`fixed inset-0 z-50 bg-white flex flex-col items-center justify-center p-4 transition-all duration-500 ease-out transform ${
+      isSearchOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+    }`}
+  >
+    {/* Close Button */}
+    <button
+      onClick={() => setIsSearchOpen(false)}
+      className="absolute top-6 right-6 text-gray-700 hover:text-gray-900 text-3xl"
+    >
+      &times;
+    </button>
+    <h2 className="text-3xl font-bold text-gray-800 mb-6">Search the Site</h2>
+    <input
+      type="text"
+      placeholder="Search my blog posts or topics..."
+
+      value={query}
+      onChange={(e) => setQuery(e.target.value)}
+      className="w-full max-w-xl p-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <button
+      onClick={searchArticles}
+      className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700"
+    >
+      Search
+    </button>
 
           {/* Risultati della Ricerca */}
           <div className="mt-6 w-full max-w-xl">
