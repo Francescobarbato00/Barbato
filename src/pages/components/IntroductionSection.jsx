@@ -34,7 +34,9 @@ export default function IntroductionSection() {
         {/* Titolo con Effetto Ingresso */}
         <div
           className={`w-full md:w-1/3 transform transition-transform duration-700 ease-out ${
-            isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+            isVisible
+              ? "translate-x-0 opacity-100"
+              : "mobile-translate-left -translate-x-10 opacity-0"
           }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-blue-600 mb-4 md:mb-0 leading-tight">
@@ -45,7 +47,9 @@ export default function IntroductionSection() {
         {/* Testo con Effetto Ingresso */}
         <div
           className={`w-full md:w-2/3 text-gray-700 leading-relaxed transform transition-transform duration-700 ease-out delay-300 ${
-            isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
+            isVisible
+              ? "translate-x-0 opacity-100"
+              : "mobile-translate-right translate-x-10 opacity-0"
           }`}
         >
           <p className="text-lg mb-6 md:mb-4">

@@ -365,3 +365,13 @@ body {
   opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
 }
+/* Correzione animazione in ingresso per dispositivi mobili */
+@media (max-width: 768px) {
+  .mobile-translate-left {
+    transform: translateX(-5%) !important; /* Movimento ridotto a sinistra */
+  }
+
+  .mobile-translate-right {
+    transform: translateX(5%) !important; /* Movimento ridotto a destra */
+  }
+}
