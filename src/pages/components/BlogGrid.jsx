@@ -171,3 +171,4 @@ const BlogGrid = () => {
 };
 
 export default BlogGrid;
+console.log(generateSlug("Getting Started with Next.js and VS Code"));

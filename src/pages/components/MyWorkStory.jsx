@@ -10,28 +10,85 @@ export default function MyWorkStory() {
       subtitle: "Self-Employed",
       location: "Remote",
       period: "Sept 2019 - Present",
-      description: `As a freelance Full Stack Developer with a VAT number, I specialize in 
-      JavaScript, Next.js, TailwindCSS, PHP, and Python. My work involves developing complex and 
-      high-performance web applications, creating showcase websites and e-commerce solutions. 
-      I integrate cutting-edge technologies to deliver dynamic and tailored solutions.`,
+      description: `After graduating from high school, I decided to establish myself as a freelance Full Stack Developer 
+by opening a VAT-registered business in May 2020. I launched my digital marketing campaign, focusing on creating 
+aesthetic and functional websites for small to medium-sized enterprises (SMEs) and developing e-commerce solutions.
+
+During this period, I managed both the website development process and social media marketing strategies. This 
+included designing and running targeted advertising campaigns to help businesses expand their digital presence. 
+I primarily used Content Management Systems (CMS) like WordPress combined with Elementor and WooCommerce to build 
+visually appealing showcase websites and user-friendly e-commerce platforms.
+
+Over time, I transitioned into full-code development, honing my skills in **JavaScript**, **Next.js**, and 
+**TailwindCSS** for creating dynamic and high-performance web applications. I further expanded my stack to include 
+**PHP** and **Python**, enabling me to develop custom, scalable backend solutions and APIs.
+
+The VAT-registered business operated until December 2020, when I successfully exceeded the flat-rate taxation 
+threshold, marking a significant milestone in my professional growth as a developer and entrepreneur.`
+,
     },
     {
       title: "IT Assistant",
       subtitle: "Ministero della Giustizia",
       location: "Milan, Italy",
       period: "May 2022 - Jun 2023",
-      description: `At the Department of Penitentiary Administration (DAP), I implemented 
-      digitalization protocols, provided hardware/software support, managed Ministry applications, 
-      oversaw video surveillance systems, and served as administrator for the National Active Directory.`,
+      description: `While attending my first year of university, I successfully passed the competitive exam 
+to join the Ministry of Justice as an IT Assistant. The selection process included a preliminary test, 
+two specialized exams in **IT** and **penitentiary law**, and an oral examination.
+
+On May 16, 2022, I began my service at the **Department of Penitentiary Administration (DAP)** in Milan, 
+assigned to the **CED (Data Processing Center)** of the Opera Penitentiary Institute. My responsibilities 
+included providing comprehensive **hardware and software support** for workstations (PDLs), managing 
+and maintaining **video surveillance systems**, and configuring **DVR** and **NVR** solutions for monitoring 
+and security purposes.
+
+Additionally, I worked as an administrator for the **National Microsoft Active Directory**, managing user 
+accounts, permissions, and ensuring proper access controls across the network. My role also involved 
+working with **Microsoft SQL databases** to maintain critical systems and assist with data queries and management.
+
+Other key duties included:
+- Troubleshooting network and system issues to ensure seamless operations.
+- Implementing and maintaining digitalization protocols for administrative efficiency.
+- Overseeing Ministry-specific applications to support operational workflows.
+- Ensuring compliance with security standards and performing routine system audits.
+
+This role provided me with hands-on experience in IT infrastructure, system administration, and 
+network management within a highly structured and secure environment.`
+,
     },
     {
       title: "Computer Engineer",
       subtitle: "Scuola Superiore della Magistratura",
       location: "Florence, Italy",
       period: "Jun 2023 - Dec 2024",
-      description: `I managed IT operations for judicial training programs, ensuring hardware/software 
-      integration, troubleshooting, and coordination of resources. Programs included professional 
-      development for judges and international training courses.`,
+      description: `As the IT Manager at the Castel Pulci headquarters of the **Scuola Superiore della Magistratura** 
+(SSM), I was responsible for overseeing all technological aspects related to the training programs for magistrates. 
+My role involved ensuring seamless **hardware and software integration**, troubleshooting technical issues, and 
+coordinating IT resources to support the delivery of professional development courses.
+
+The programs I managed included:
+- **Initial Training** for magistrates in judicial apprenticeship (tirocinio).
+- **Permanent Training** for both ordinary and honorary magistrates.
+- **Leadership Training** for court and office directors.
+- **International Training Courses** for judicial professionals and foreign legal delegations.
+
+In addition to day-to-day IT operations, I implemented and managed **Microsoft Azure** services to ensure scalability 
+and secure cloud-based solutions for document storage, resource sharing, and collaboration among participants. I was 
+also responsible for maintaining the **Microsoft Active Directory** infrastructure to handle user authentication and 
+role-based permissions for magistrates and administrative staff.
+
+Key responsibilities included:
+- Setting up and managing **workstations (PDLs)**, projectors, and **AV equipment** in training halls.
+- Ensuring network stability and providing **on-site troubleshooting** for real-time technical issues during training sessions.
+- Facilitating the integration of **e-learning platforms** and digital tools for course delivery.
+- Coordinating video conferencing systems for remote and international sessions.
+- Assisting with **data management** for participant records and course materials.
+
+My role required close collaboration with judicial trainers, administrative personnel, and external IT vendors to 
+ensure the smooth execution of educational programs. By leveraging modern technologies and implementing efficient 
+IT processes, I contributed to the enhancement of training experiences for magistrates while upholding the operational 
+standards of the **Scuola Superiore della Magistratura**.`
+,
     },
     {
       title: "Cyber Security Analyst",
@@ -64,12 +121,13 @@ export default function MyWorkStory() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Titolo */}
         <h2
-          className={`text-4xl font-bold text-gray-900 mb-12 text-center transition-opacity duration-1000 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          My Work Story
-        </h2>
+  className={`text-4xl font-bold text-gray-900 mb-12 text-center transition-opacity duration-1000 ${
+    isVisible ? "opacity-100" : "opacity-0"
+  }`}
+>
+  My Work <span className="text-blue-500">Story</span>
+</h2>
+
 
         {/* Timeline */}
         <div className="relative">
