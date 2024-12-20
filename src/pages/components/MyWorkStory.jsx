@@ -95,9 +95,33 @@ standards of the **Scuola Superiore della Magistratura**.`
       subtitle: "AGID - Agenzia per l'Italia Digitale",
       location: "Rome, Italy",
       period: "Dec 2024 - Present",
-      description: `At CERT-AGID, I analyze and mitigate cyber threats such as malware and phishing, 
-      manage data breaches, and conduct risk assessments. I implement intrusion detection systems 
-      and collaborate with national and international partners to protect critical infrastructure.`,
+      description: `As of *December 1, 2024*, I have been assigned to work at *AGID* (Agenzia per l'Italia Digitale), 
+part of the *Presidency of the Council of Ministers*. I serve as a cybersecurity specialist within the 
+*CERT-AGID* (*Computer Emergency Response Team*), a national team dedicated to protecting critical infrastructure 
+and ensuring the security of public administration systems.
+
+At CERT-AGID, my responsibilities include:
+- Conducting *OSINT (Open Source Intelligence)* investigations to identify emerging cyber threats.
+- Managing and continuously updating our flow of *Indicators of Compromise (IoCs)* by analyzing large-scale 
+  *phishing* and *malware campaigns*.
+- Monitoring and mitigating *data breaches* to safeguard sensitive information and public data.
+- Performing *penetration tests* and conducting *vulnerability assessments* to identify and remediate security gaps.
+- Implementing and maintaining *Intrusion Detection Systems (IDS)* to detect and respond to potential threats in real time.
+- Collaborating with *national* and *international partners* to share threat intelligence and protect critical infrastructure.
+
+Additionally, I participate in the continuous *monitoring* of public administration (*PA*) systems to identify 
+anomalies, mitigate attacks, and ensure compliance with national cybersecurity standards. This includes 
+analyzing advanced persistent threats (*APTs*), ransomware activities, and *zero-day vulnerabilities* 
+to provide actionable insights.
+
+My work also involves creating comprehensive *risk assessments* and coordinating response plans during 
+cyber incidents to minimize damage and restore operational continuity. I contribute to the development 
+of security protocols, policy enforcement, and the education of stakeholders on cybersecurity best practices.
+
+By leveraging cutting-edge tools and technologies, such as *SIEM systems*, *sandbox environments*, and 
+*network traffic analysis tools*, I ensure that the CERT-AGID team remains at the forefront of national 
+cybersecurity defense.`
+,
     },
   ];
 
