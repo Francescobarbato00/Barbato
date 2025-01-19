@@ -7,7 +7,9 @@ export default function TestimonialsSection() {
           <p className="text-sm text-gray-500 uppercase">Testimonials</p>
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
             What People Are <br />
-            <span className="font-normal">Saying About Us</span>
+            <span className="font-normal">
+              Saying <span className="text-blue-600">About Us</span>
+            </span>
           </h2>
           <div className="w-12 h-1 bg-gray-900 mt-2 mx-auto md:mx-0"></div>
         </div>
@@ -26,7 +28,7 @@ export default function TestimonialsSection() {
             <div className="flex justify-center md:justify-start items-center space-x-4">
               <div className="w-12 h-12 rounded-full bg-gray-200"></div>
               <div>
-                <p className="font-bold text-gray-900">Client A</p>
+                <p className="font-bold text-gray-900">Anonymous Client</p>
                 <p className="text-sm italic text-gray-600">Project Feedback</p>
               </div>
             </div>
@@ -44,7 +46,7 @@ export default function TestimonialsSection() {
             <div className="flex justify-center md:justify-start items-center space-x-4">
               <div className="w-12 h-12 rounded-full bg-gray-200"></div>
               <div>
-                <p className="font-bold text-gray-900">Client B</p>
+                <p className="font-bold text-gray-900">Verified Customer</p>
                 <p className="text-sm italic text-gray-600">Service Collaboration</p>
               </div>
             </div>
@@ -62,7 +64,7 @@ export default function TestimonialsSection() {
             <div className="flex justify-center md:justify-start items-center space-x-4">
               <div className="w-12 h-12 rounded-full bg-gray-200"></div>
               <div>
-                <p className="font-bold text-gray-900">Client C</p>
+                <p className="font-bold text-gray-900">Satisfied Client</p>
                 <p className="text-sm italic text-gray-600">General Testimonial</p>
               </div>
             </div>
