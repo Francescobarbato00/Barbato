@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserTie, faComments, faHandsHelping } from "@fortawesome/free-solid-svg-icons";
+
 export default function TestimonialsSection() {
   return (
     <section className="py-16 bg-white">
@@ -26,7 +29,7 @@ export default function TestimonialsSection() {
               Communication was seamless, and they exceeded expectations in every way.
             </p>
             <div className="flex justify-center md:justify-start items-center space-x-4">
-              <div className="w-12 h-12 rounded-full bg-gray-200"></div>
+              <FontAwesomeIcon icon={faUserTie} className="w-12 h-12 text-blue-600" />
               <div>
                 <p className="font-bold text-gray-900">Anonymous Client</p>
                 <p className="text-sm italic text-gray-600">Project Feedback</p>
@@ -44,7 +47,7 @@ export default function TestimonialsSection() {
               and focus on delivering a product that met all our needs.
             </p>
             <div className="flex justify-center md:justify-start items-center space-x-4">
-              <div className="w-12 h-12 rounded-full bg-gray-200"></div>
+              <FontAwesomeIcon icon={faComments} className="w-12 h-12 text-blue-600" />
               <div>
                 <p className="font-bold text-gray-900">Verified Customer</p>
                 <p className="text-sm italic text-gray-600">Service Collaboration</p>
@@ -62,7 +65,7 @@ export default function TestimonialsSection() {
               kept us informed throughout the process.
             </p>
             <div className="flex justify-center md:justify-start items-center space-x-4">
-              <div className="w-12 h-12 rounded-full bg-gray-200"></div>
+              <FontAwesomeIcon icon={faHandsHelping} className="w-12 h-12 text-blue-600" />
               <div>
                 <p className="font-bold text-gray-900">Satisfied Client</p>
                 <p className="text-sm italic text-gray-600">General Testimonial</p>
