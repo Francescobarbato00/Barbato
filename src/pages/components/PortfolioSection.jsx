@@ -46,6 +46,14 @@ export default function PortfolioSection() {
     },
     {
       id: 6,
+      title: "Fondazione Castel Capuano",
+      description:
+        "We developed a modern website for Fondazione Castel Capuano. Fondazione Castel Capuano is a historic foundation in the heart of Naples, dedicated to law, the preservation of legal heritage, and the promotion of legal culture through events, exhibitions, and research activities. .",
+      image: "/fondazione.png",
+      link: "https://castelcapuano.vercel.app/",
+    },
+    {
+      id: 7,
       title: "Studio Legale Compagno",
       description:
         "We developed a modern website for Studio Legale Compagno, a law firm specializing in civil and corporate law. The site features an interactive consultation booking system, detailed service descriptions, and an integrated legal advice chatbot to assist clients in real-time.",
