@@ -20,45 +20,15 @@ export default function PortfolioSection() {
       image: "/zendata.png",
       link: "https://zendata.it/",
     },
+   
+   
     {
       id: 3,
-      title: "eCommerce Barber Shop",
-      description:
-        "We developed an eCommerce platform for a local barbershop that allows customers to easily purchase hair care products and book services online. The platform features automated inventory management, seamless payment processing, and a user-friendly booking system for appointments.",
-      image: "/barber.png",
-      link: "https://fichera.vercel.app/",
-    },
-    {
-      id: 4,
-      title: "Studio Legale Berardi",
-      description:
-        "We developed a dynamic website for Studio Legale Berardi, a law firm specializing in notarial services. The site features a sophisticated chatbot for client inquiries, an easy-to-navigate legal resource center, and a booking system for consultations.",
-      image: "/avvberardi.png",
-      link: "https://avvberardi.vercel.app/",
-    },
-    {
-      id: 5,
-      title: "Edilges",
-      description:
-        "We created a dynamic website for Edilges, a construction company specializing in renovation and restructuring projects. The site showcases their expertise in residential, commercial, and industrial construction, with detailed project galleries, client testimonials, and a cost estimator tool.",
-      image: "/edilges.png",
-      link: "https://edoardo.vercel.app/",
-    },
-    {
-      id: 6,
       title: "Fondazione Castel Capuano",
       description:
         "We developed a modern website for Fondazione Castel Capuano. Fondazione Castel Capuano is a historic foundation in the heart of Naples, dedicated to law, the preservation of legal heritage, and the promotion of legal culture through events, exhibitions, and research activities. .",
       image: "/fondazione.png",
       link: "https://castelcapuano.vercel.app/",
-    },
-    {
-      id: 7,
-      title: "Studio Legale Compagno",
-      description:
-        "We developed a modern website for Studio Legale Compagno, a law firm specializing in civil and corporate law. The site features an interactive consultation booking system, detailed service descriptions, and an integrated legal advice chatbot to assist clients in real-time.",
-      image: "/avvcompagno.png",
-      link: "https://arianna.vercel.app/",
     },
   ];
 
