@@ -1,15 +1,24 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { CodeBracketIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Flag from "react-world-flags";
-import { useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "/lib/firebase";
 
 export default function Headers() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false); // Stato per il popup di ricerca
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+
+  // Effetto per disabilitare lo scroll quando il menu mobile è aperto
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isMenuOpen]);
 
   // Funzione per cercare articoli in Firestore
   const searchArticles = async () => {
@@ -59,25 +68,22 @@ export default function Headers() {
         {/* Pulsanti Desktop */}
         <div className="hidden md:flex items-center space-x-4">
           {/* LinkedIn Button */}
-          {/* LinkedIn Button */}
-<a
-  href="https://www.linkedin.com/in/francesco-barbato-a79b92250/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center transition-transform transform hover:scale-105"
->
-  {/* Icona LinkedIn */}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="w-5 h-5 mr-2"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-  >
-    <path d="M20 0H4C1.8 0 0 1.8 0 4v16c0 2.2 1.8 4 4 4h16c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zM8 19H5V9h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7c1 0 1.7.8 1.7 1.7s-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.2-1.8-2.2-1 0-1.6.7-1.8 1.4-.1.2-.1.5-.1.8V19h-3V9h3v1.4c.5-.8 1.4-1.5 3-1.5 2.2 0 3.7 1.5 3.7 4.4V19z" />
-  </svg>
-  CONNECT ON LINKEDIN
-</a>
-
+          <a
+            href="https://www.linkedin.com/in/francesco-barbato-a79b92250/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center transition-transform transform hover:scale-105"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5 mr-2"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M20 0H4C1.8 0 0 1.8 0 4v16c0 2.2 1.8 4 4 4h16c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4zM8 19H5V9h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7c1 0 1.7.8 1.7 1.7s-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.2-1.8-2.2-1 0-1.6.7-1.8 1.4-.1.2-.1.5-.1.8V19h-3V9h3v1.4c.5-.8 1.4-1.5 3-1.5 2.2 0 3.7 1.5 3.7 4.4V19z" />
+            </svg>
+            CONNECT ON LINKEDIN
+          </a>
 
           {/* Selezione Lingua */}
           <div className="flex space-x-2">
@@ -129,33 +135,32 @@ export default function Headers() {
 
       {/* Popup di Ricerca */}
       {isSearchOpen && (
-  <div
-    className={`fixed inset-0 z-50 bg-white flex flex-col items-center justify-center p-4 transition-all duration-500 ease-out transform ${
-      isSearchOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-    }`}
-  >
-    {/* Close Button */}
-    <button
-      onClick={() => setIsSearchOpen(false)}
-      className="absolute top-6 right-6 text-gray-700 hover:text-gray-900 text-3xl"
-    >
-      &times;
-    </button>
-    <h2 className="text-3xl font-bold text-gray-800 mb-6">Search the Site</h2>
-    <input
-      type="text"
-      placeholder="Search my blog posts or topics..."
-
-      value={query}
-      onChange={(e) => setQuery(e.target.value)}
-      className="w-full max-w-xl p-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-    />
-    <button
-      onClick={searchArticles}
-      className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700"
-    >
-      Search
-    </button>
+        <div
+          className={`fixed inset-0 z-50 bg-white flex flex-col items-center justify-center p-4 transition-all duration-500 ease-out transform ${
+            isSearchOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          {/* Close Button */}
+          <button
+            onClick={() => setIsSearchOpen(false)}
+            className="absolute top-6 right-6 text-gray-700 hover:text-gray-900 text-3xl"
+          >
+            &times;
+          </button>
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Search the Site</h2>
+          <input
+            type="text"
+            placeholder="Search my blog posts or topics..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full max-w-xl p-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            onClick={searchArticles}
+            className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700"
+          >
+            Search
+          </button>
 
           {/* Risultati della Ricerca */}
           <div className="mt-6 w-full max-w-xl">
